@@ -1,0 +1,4 @@
+package: github.com/wesleyholiveira
+import:
+- package: github.com/gorilla/mux
+  version: v1.6.0
