@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 	"github.com/gorilla/mux"
-	"github.com/wesleyholiveira/handlers"
-	"github.com/wesleyholiveira/middlewares"
 	"github.com/jinzhu/gorm"
+	. "github.com/wesleyholiveira/handlers"
+	. "github.com/wesleyholiveira/middlewares"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
@@ -34,10 +34,10 @@ func main() {
 	}
 
 	// register the routes
-	r.HandleFunc("/", handlers.MainHandler)
+	r.HandleFunc("/", MainHandler)
 
 	// register the Handler
-	http.Handle("/", middlewares.GeneralMiddleware(r))
+	http.Handle("/", GeneralMiddleware(r))
 
 	log.Fatal(http.ListenAndServe(fullAddr, nil))
 }
